@@ -1,4 +1,4 @@
-import { ADD_BOOK, DELETE_BOOK } from '../actions/book'
+import { ADD_BOOK, DELETE_BOOK, EDIT_BOOK } from '../actions/book'
 
 const initialState = {
   list: []
@@ -7,6 +7,12 @@ const initialState = {
 const deleteBook = (payload, list) => {
   const newList = list.filter(listElement => listElement.id != payload)
   return newList
+}
+
+const editBook = (payload, list) => {
+  const indexOfEdit = list.map(listItem => listItem.id).indexOf(payload.id)
+  list.splice(indexOfEdit, 1, payload)
+  return list
 }
 
 export default (state = initialState, action) => {
@@ -20,6 +26,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         list: deleteBook(action.payload, state.list)
+      }
+    case EDIT_BOOK:
+      return {
+        ...state,
+        list: editBook(action.payload, state.list)
       }
     default:
       return state

@@ -7,15 +7,21 @@ import { uuid } from 'uuidv4'
 import { addBook } from '../../actions/book'
 import { Title } from '../texts'
 
-const BookForm = () => {
-  const [newBook, setNewBook] = useState({ name: '', author: '', quantity: '' })
+const BookForm = props => {
+  const [newBook, setNewBook] = useState({
+    name: props.book ? props.book : '',
+    author: props.book ? props.book : '',
+    statut: 'Disponible'
+  })
+  console.log(props.book)
+
   const dispatch = useDispatch()
 
   const onSubmit = e => {
     e.preventDefault()
     dispatch(addBook({ id: uuid(), value: newBook }))
 
-    setNewBook({ name: '', author: '', quantity: '' })
+    setNewBook({ name: '', author: '' })
   }
 
   return (
@@ -38,15 +44,7 @@ const BookForm = () => {
             placeholder='Nom du livre'
           ></StyledInput>
         </div>
-        <div>
-          <StyledInput
-            value={newBook.quantity}
-            onChange={e => setNewBook({ ...newBook, quantity: e.target.value })}
-            type='text'
-            placeholder='Quantité'
-          ></StyledInput>
-        </div>
-        <ButtonSubmit name='Valider' width='175px'></ButtonSubmit>
+        <ButtonSubmit name='Valider' width='175px' left='15%'></ButtonSubmit>
       </StyledForm>
     </BookFormContainer>
   )
@@ -54,7 +52,10 @@ const BookForm = () => {
 
 const BookFormContainer = styled.div``
 const StyledForm = styled.form`
-  padding: 20px;
+  display: flex;
+  padding-left: 10%;
+  padding-top: 3%;
+  min-height: 270px;
   font-size: 14px;
   width: 540px;
   margin: 0 auto;
@@ -72,7 +73,7 @@ const StyledForm = styled.form`
 
 const StyledInput = styled.input`
   padding: 5px;
-  width: 60%;
+  width: 70%;
   height: 1.5rem;
   margin-top: 15px;
   margin-bottom: 10px;
