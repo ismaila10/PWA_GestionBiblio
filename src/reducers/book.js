@@ -1,7 +1,7 @@
 import { ADD_BOOK, DELETE_BOOK, EDIT_BOOK } from '../actions/book'
 
 const initialState = {
-  list: []
+  list: [{id: 'DDD', name: 'ismaila', author: 'diallo', statut:'ahhd'}]
 }
 
 const deleteBook = (payload, list) => {

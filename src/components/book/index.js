@@ -18,6 +18,7 @@ const Books = () => {
     author: book.author,
     statut: book.statut
   })
+  console.log(bookListe)
   const dispatch = useDispatch()
   const onSubmitEdit = (e, book) => {
     setBookEdit(book)
@@ -40,9 +41,9 @@ const Books = () => {
         {bookListe.map(book =>
           book.id ? (
             <tr key={book.id}>
-              <td>{book.value.author}</td>
-              <td>{book.value.name}</td>
-              <td>{book.value.statut}</td>
+              <td>{book.author}</td>
+              <td>{book.name}</td>
+              <td>{book.statut}</td>
               <td>
                 <IconButton onClick={e => onSubmitEdit(e, book)}>
                   <Logo url={url} top='10px' width='1.5rem'></Logo>
