@@ -20,11 +20,16 @@ const SubmitButton = styled.button`
   margin-left: ${props => (props.left ? props.left : '0%')};
   height: ${props => (props.height ? props.height : '30px')};
   width: ${props => (props.width ? props.width : '100%')};
-  border: none;
+  border: solid;
   border-radius: 10px;
   background-color: #2ea44f;
   color: #fff;
   font-weight: bold;
+  &:hover {
+    background-color: white;
+    color: #2ea44f;
+    border-color: #2ea44f;
+  }
 `
 
 export default ButtonSubmit

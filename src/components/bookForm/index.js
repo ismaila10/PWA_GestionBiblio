@@ -4,29 +4,37 @@ import { useDispatch } from 'react-redux'
 import ButtonSubmit from '../button'
 import { uuid } from 'uuidv4'
 
-import { addBook } from '../../actions/book'
+import { addBook, editBook } from '../../actions/book'
 import { Title } from '../texts'
 
-const BookForm = props => {
+const BookForm = ({ bookEdit, setBookEdit }) => {
   const [newBook, setNewBook] = useState({
-    name: props.book ? props.book : '',
-    author: props.book ? props.book : '',
+    name: bookEdit ? bookEdit.value.name : '',
+    author: bookEdit ? bookEdit.value.author : '',
     statut: 'Disponible'
   })
-  console.log(props.book)
 
   const dispatch = useDispatch()
 
   const onSubmit = e => {
     e.preventDefault()
-    dispatch(addBook({ id: uuid(), value: newBook }))
+    if (!bookEdit) {
+      dispatch(addBook({ id: uuid(), value: newBook }))
+    } else {
+      dispatch(editBook({ id: bookEdit.id, value: newBook }))
+    }
 
     setNewBook({ name: '', author: '' })
   }
 
   return (
     <BookFormContainer>
-      <Title>Ajouter un livre</Title>
+      {bookEdit ? (
+        <Title>Modification d'un livre</Title>
+      ) : (
+        <Title>Ajout d'un livre</Title>
+      )}
+
       <StyledForm onSubmit={onSubmit}>
         <div>
           <StyledInput
@@ -50,18 +58,23 @@ const BookForm = props => {
   )
 }
 
-const BookFormContainer = styled.div``
+const BookFormContainer = styled.div`
+  align-item: center;
+`
 const StyledForm = styled.form`
   display: flex;
-  padding-left: 10%;
-  padding-top: 3%;
-  min-height: 270px;
+  padding-left: 20%;
+  padding-top: 2%;
+  min-height: 250px;
   font-size: 14px;
   width: 540px;
   margin: 0 auto;
   margin-top: 5%;
+  margin-left: 5%;
+  border: solid;
+  border-color: #2ea44f;
   border-radius: 8px;
-  background-color: #f6f8fa;
+  background-color: transparent;
   border: 1px solid #eaecef;
   box-sizing: border-box;
   display: block;
@@ -75,7 +88,7 @@ const StyledInput = styled.input`
   padding: 5px;
   width: 70%;
   height: 1.5rem;
-  margin-top: 15px;
+  margin-top: 25px;
   margin-bottom: 10px;
   border-radius: 3px;
 `
