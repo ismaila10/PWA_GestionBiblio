@@ -27,3 +27,10 @@ export const IconButton = styled.button`
   border: none;
   background-color: transparent;
 `
+
+export const ChangeTheme = styled.button`
+  cursor: pointer;
+  float: right;
+  border-color: transparent;
+  background-color: transparent;
+`

@@ -66,7 +66,6 @@ const BookContainer = styled.div``
 const StyledTable = styled.table`
   display: flex;
   padding: 20px;
-  font-size: 14px;
   width: 740px;
   margin: 0 auto;
   margin-top: 5%;

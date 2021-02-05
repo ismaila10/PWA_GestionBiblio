@@ -21,7 +21,6 @@ const ImgComponent = styled.img`
   border-radius: ${props => (props.radius ? props.radius : '3px')};
   float: ${props => (props.float ? props.float : '')};
   padding-top: ${props => (props.top ? props.top : '')};
-  padding-right: 15px;
 `
 
 export default Logo

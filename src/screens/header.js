@@ -48,7 +48,7 @@ const Header = () => {
 }
 
 const HeaderContainer = styled.div`
-  background-color: ${props => props.theme.secondary};
+  background-color: 'blue';
   min-height: 5rem;
   padding-top: 15px;
   padding-left: 15px;
