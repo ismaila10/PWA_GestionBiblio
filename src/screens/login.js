@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import SignIn from '../components/signin'
 import axios from 'axios'
+import i18n from "i18next";
 
 const submit = (e, formState, setErrorMessage, history) => {
   e.preventDefault()
@@ -29,6 +30,7 @@ const submit = (e, formState, setErrorMessage, history) => {
 const Login = () => {
   return (
     <LoginContainer>
+      <p>{i18n.t('menu')}</p>
       <SignIn submit={submit}></SignIn>
     </LoginContainer>
   )

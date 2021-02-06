@@ -9,6 +9,7 @@ import useTheme from './config/useTheme'
 import url from './assets/sombre.jpg'
 import url1 from './assets/clair.jpg'
 import firebase from "./firebase";
+import "./config/translation";
 
 function App() {
   useEffect(() =>{
