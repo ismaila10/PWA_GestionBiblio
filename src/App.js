@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import './App.css'
 import Routes from './config/router'
@@ -8,8 +8,17 @@ import style from 'styled-theming'
 import useTheme from './config/useTheme'
 import url from './assets/sombre.jpg'
 import url1 from './assets/clair.jpg'
+import firebase from "./firebase";
 
 function App() {
+  useEffect(() =>{
+    const msg = firebase.messaging();
+    msg.requestPermission().then(() => {
+      return msg.getToken();
+    }).then((data) => {
+      console.warn("token", data)
+    })
+  })
   const theme = useTheme()
   return (
     <ThemeProvider theme={theme}>
