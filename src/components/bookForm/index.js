@@ -6,11 +6,12 @@ import { uuid } from 'uuidv4'
 
 import { addBook, editBook } from '../../actions/book'
 import { Title } from '../texts'
+import i18n from "i18next";
 
 const BookForm = ({ bookEdit, setBookEdit }) => {
   const [newBook, setNewBook] = useState({
-    name: bookEdit ? bookEdit.value.name : '',
-    author: bookEdit ? bookEdit.value.author : '',
+    name: bookEdit ? bookEdit.name : '',
+    author: bookEdit ? bookEdit.author : '',
     statut: 'Disponible'
   })
 
@@ -19,9 +20,9 @@ const BookForm = ({ bookEdit, setBookEdit }) => {
   const onSubmit = e => {
     e.preventDefault()
     if (!bookEdit) {
-      dispatch(addBook({ id: uuid(), value: newBook }))
+      dispatch(addBook({ id: uuid(), name: newBook.name, author: newBook.author, statut: newBook.statut }))
     } else {
-      dispatch(editBook({ id: bookEdit.id, value: newBook }))
+      dispatch(editBook({ id: bookEdit.id, name: newBook.name, author: newBook.author, statut: newBook.statut }))
     }
 
     setNewBook({ name: '', author: '' })
@@ -30,9 +31,9 @@ const BookForm = ({ bookEdit, setBookEdit }) => {
   return (
     <BookFormContainer>
       {bookEdit ? (
-        <Title>Modification d'un livre</Title>
+        <Title>{i18n.t('edit')}</Title>
       ) : (
-        <Title>Ajout d'un livre</Title>
+        <Title>{i18n.t('add')}</Title>
       )}
 
       <StyledForm onSubmit={onSubmit}>

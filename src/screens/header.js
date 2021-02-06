@@ -7,6 +7,8 @@ import Logout from '../components/logout'
 import url from '../assets/logo1.jpg'
 import url1 from '../assets/img.jpg'
 import { UserName, Linked } from '../components/texts'
+import i18n from "i18next";
+
 
 const Header = () => {
   const history = useHistory()
@@ -24,10 +26,10 @@ const Header = () => {
           <Logo url={url} top='12px' alt='Logo' width='50px'></Logo>
         </Link>
         <Link to='/home'>
-          <Linked>Accueil</Linked>
+          <Linked>{i18n.t('home')}</Linked>
         </Link>
         <Link to='/book'>
-          <Linked>Livres</Linked>
+          <Linked>{i18n.t('book')}</Linked>
         </Link>
         <Logo
           url={url1}

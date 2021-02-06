@@ -5,7 +5,7 @@ const initialState = {
 }
 
 const deleteBook = (payload, list) => {
-  const newList = list.filter(listElement => listElement.id != payload)
+  const newList = list.filter(listElement => listElement.id !== payload)
   return newList
 }
 

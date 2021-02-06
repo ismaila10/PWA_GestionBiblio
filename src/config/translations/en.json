@@ -1,5 +1,10 @@
 {
   "translation": {
-    "menu": "Menu en anglais"
+    "home": "Home",
+    "book": "Book",
+    "welcome": "Welcome to my online library",
+    "list" : "List of books",
+    "add" : "Adding a book",
+    "edit" : "Editing a book"
   }
 }

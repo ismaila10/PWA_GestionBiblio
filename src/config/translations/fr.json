@@ -1,5 +1,10 @@
 {
   "translation": {
-    "menu": "Menu"
+    "home": "Accueil",
+    "book": "Livres",
+    "welcome": "Bienvenue dans ma bibliothèque en ligne",
+    "list" : "Liste des livres",
+    "add" : "Ajout d'un livre",
+    "edit" : "Modification d'un livre"
   }
 }
