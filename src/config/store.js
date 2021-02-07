@@ -11,11 +11,9 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, reducers)
 
-
-
 export const store = createStore(persistedReducer, applyMiddleware(logger))
 
 export const persistor = persistStore(store)
 
-persistor.purge()
+//persistor.purge()
 

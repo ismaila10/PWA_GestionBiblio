@@ -8,7 +8,7 @@ import { addBook, editBook } from '../../actions/book'
 import { Title } from '../texts'
 import i18n from "i18next";
 
-const BookForm = ({ bookEdit, setBookEdit }) => {
+const BookForm = ({ bookEdit, setBookEdit, showModal, setModal }) => {
   const [newBook, setNewBook] = useState({
     name: bookEdit ? bookEdit.name : '',
     author: bookEdit ? bookEdit.author : '',
