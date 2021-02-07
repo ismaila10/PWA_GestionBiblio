@@ -1,7 +1,16 @@
 import { ADD_BOOK, DELETE_BOOK, EDIT_BOOK } from '../actions/book'
 
 const initialState = {
-  list: [{id: 'DDD', name: 'ismaila', author: 'diallo', statut:'ahhd'}]
+  list: [
+    {id: 'DDD', name: 'Une si longue lettre', author: 'Ismaila Diallo', statut:'Disponible'},
+    {id: 'DDDa', name: 'ismaila', author: 'diallo', statut:'ahhd'},
+    {id: 'DDDs', name: 'ismaila', author: 'diallo', statut:'ahhd'},
+    {id: 'DDDb', name: 'ismaila', author: 'diallo', statut:'ahhd'},
+    {id: 'DDDj', name: 'ismaila', author: 'diallo', statut:'ahhd'},
+    {id: 'DDDk', name: 'ismaila', author: 'diallo', statut:'ahhd'},
+    {id: 'DDDl', name: 'ismaila', author: 'diallo', statut:'ahhd'},
+    {id: 'DDmD', name: 'ismaila', author: 'diallo', statut:'ahhd'}
+  ]
 }
 
 const deleteBook = (payload, list) => {

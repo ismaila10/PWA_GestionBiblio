@@ -40,7 +40,7 @@ const BookForm = ({ bookEdit, setBookEdit }) => {
         <div>
           <StyledInput
             value={newBook.author}
-            onChange={e => setNewBook({ ...newBook, author: e.target.value })}
+            onChange={e => setNewBook({ ...newBook.author, author: e.target.value })}
             type='text'
             placeholder='Auteur du livre'
           ></StyledInput>
@@ -48,12 +48,15 @@ const BookForm = ({ bookEdit, setBookEdit }) => {
         <div>
           <StyledInput
             value={newBook.name}
-            onChange={e => setNewBook({ ...newBook, name: e.target.value })}
+            onChange={e => setNewBook({ ...newBook.name, name: e.target.value })}
             type='text'
             placeholder='Nom du livre'
           ></StyledInput>
         </div>
-        <ButtonSubmit name='Valider' width='175px' left='15%'></ButtonSubmit>
+        <SubmitDiv>
+          <ButtonSubmit name='Valider' width='100%' height='40px'></ButtonSubmit>
+        </SubmitDiv>
+        
       </StyledForm>
     </BookFormContainer>
   )
@@ -63,7 +66,6 @@ const BookFormContainer = styled.div`
   align-item: center;
 `
 const StyledForm = styled.form`
-  display: flex;
   padding-left: 20%;
   padding-top: 2%;
   min-height: 250px;
@@ -86,12 +88,20 @@ const StyledForm = styled.form`
 `
 
 const StyledInput = styled.input`
+  display: flex;
   padding: 5px;
   width: 70%;
   height: 1.5rem;
   margin-top: 25px;
   margin-bottom: 10px;
   border-radius: 3px;
+`
+
+const SubmitDiv = styled.div`
+  display: flex;
+  padding: 5px;
+  width: 70%;
+  
 `
 
 export default BookForm

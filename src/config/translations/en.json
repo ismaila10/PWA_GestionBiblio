@@ -5,6 +5,10 @@
     "welcome": "Welcome to my online library",
     "list" : "List of books",
     "add" : "Adding a book",
-    "edit" : "Editing a book"
+    "edit" : "Editing a book",
+    "log": "Please login",
+    "user": "Username",
+    "password": "Password",
+    "sign": "Sign in"
   }
 }

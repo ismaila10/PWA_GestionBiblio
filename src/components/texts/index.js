@@ -16,7 +16,7 @@ export const Linked = styled.button`
   color: white;
   border: none;
   background-color: transparent;
-  font-weight: bold;
+  font-weight: bolder;
   margin-right: 1rem;
   margin-left: 1rem;
   font-size: 1.5rem;

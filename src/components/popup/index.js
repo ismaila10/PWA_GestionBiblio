@@ -65,13 +65,6 @@ const ModalContent = styled.div`
   }
 `
 
-const ModalImg = styled.p`
-  width: 100%;
-  height: 100%;
-  border-radius: 10px 0 0 10px;
-  background: #000;
-`
-
 const CloseModalButton = styled(MdClose)`
   cursor: pointer;
   position: absolute;
