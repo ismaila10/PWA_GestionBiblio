@@ -11,6 +11,7 @@ const Logo = props => {
       float={props.float}
       radius={props.radius}
       top={props.top}
+      right={props.right}
     ></ImgComponent>
   )
 }
@@ -21,6 +22,7 @@ const ImgComponent = styled.img`
   border-radius: ${props => (props.radius ? props.radius : '3px')};
   float: ${props => (props.float ? props.float : '')};
   padding-top: ${props => (props.top ? props.top : '')};
+  margin-right: ${props => (props.right ? props.right : '')};
   color: red;
 `
 

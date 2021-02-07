@@ -8,7 +8,8 @@ export const Title = styled.h1`
 export const UserName = styled.span`
   float: right;
   color: green;
-  font-weight: bold;
+  font-weight: bolder;
+  font-size: 18px;
 `
 
 export const Linked = styled.button`

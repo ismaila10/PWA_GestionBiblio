@@ -5,6 +5,7 @@ import Logo from '../logo'
 import url from '../../assets/logo1.jpg'
 import ButtonSubmit from '../button'
 import ErrorMessage from '../error'
+import i18n from "i18next";
 
 const SignIn = ({ submit }) => {
   const [formState, setFormState] = useState({ username: '', password: '' })
@@ -17,26 +18,26 @@ const SignIn = ({ submit }) => {
         onSubmit={e => submit(e, formState, setErrorMessage, history)}
       >
         <Logo url={url} alt='Logo'></Logo>
-        <SignTitle> Veuillez vous authentifier</SignTitle>
+        <SignTitle> {i18n.t('log')}</SignTitle>
         <>
           <SignInInput
-            placeholder="Nom d'utilisateur"
+            placeholder={i18n.t('user')}
             onChange={e =>
               setFormState({ ...formState, username: e.target.value })
             }
             type='text'
           ></SignInInput>
           <SignInInput
-            placeholder='Mot de passe'
+            placeholder={i18n.t('password')}
             onChange={e =>
               setFormState({ ...formState, password: e.target.value })
             }
             type='password'
           ></SignInInput>
           <ErrorMessage errorMessage={errorMessage}></ErrorMessage>
-          <ButtonSubmit name='Se connecter' width='60%'></ButtonSubmit>
+          <ButtonSubmit name={i18n.t('sign')} width='60%' height='40px'></ButtonSubmit>
         </>
-        <SignInp>Bienvenue dans ma bibliothèque</SignInp>
+        <SignInp>{i18n.t('welcome')}</SignInp>
       </SignInForm>
     </FormContainer>
   )
@@ -48,7 +49,7 @@ const FormContainer = styled.div`
   font-size: 14px;
   width: 540px;
   margin: 0 auto;
-  margin-top: 2%;
+  margin-top: 0%;
   border-radius: 8px;
   background-color: #f6f8fa;
   border: 1px solid #eaecef;
@@ -74,6 +75,7 @@ const SignInInput = styled.input`
   margin-bottom: 15px;
   display: block;
   width: 60%;
+  height: 30px;
   font-size: 14px;
   line-height: 20px;
   vertical-align: middle;
@@ -90,7 +92,7 @@ const SignInInput = styled.input`
 const SignTitle = styled.h2`
   margin: 10% 0% 10% 0%;
   font-size: 24px;
-  font-weight: 300;
+  font-weight: bold;
   letter-spacing: -0.5px;
 `
 export default SignIn

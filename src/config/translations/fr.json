@@ -9,6 +9,12 @@
     "log": "Veuillez vous authentifier",
     "user": "Nom d'utilisateur",
     "password": "Mot de passe",
-    "sign": "Se connecter"
+    "sign": "Se connecter",
+    "author": "AUTEUR",
+    "title": "TITRE",
+    "status": "STATUT",
+    "edited": "EDITER",
+    "delete": "SUPPRIMER",
+    "borrow": "EMPRUNTER"
   }
 }

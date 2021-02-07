@@ -35,6 +35,7 @@ const Header = () => {
           url={url1}
           radius='30px'
           float='right'
+          right= '2%'
           alt='Logo'
           width='60px'
           top='5px'

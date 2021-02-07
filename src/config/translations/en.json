@@ -9,6 +9,12 @@
     "log": "Please login",
     "user": "Username",
     "password": "Password",
-    "sign": "Sign in"
+    "sign": "Sign in",
+    "author": "AUTHOR",
+    "title": "TITLE",
+    "status": "STATUS",
+    "edited": "EDIT",
+    "delete": "DELETE",
+    "borrow": "BORROW"
   }
 }

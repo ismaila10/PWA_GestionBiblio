@@ -11,6 +11,7 @@ import { IconButton } from '../texts'
 import book from '../../reducers/book'
 import Modal from '../popup'
 import { editBook } from '../../actions/book'
+import i18n from "i18next";
 
 const Books = () => {
   const bookListe = useSelector(state => state.book.list)
@@ -43,12 +44,12 @@ const Books = () => {
         setModal={setModal}
       ></Modal>
       <StyledTable>
-        <StyledThead>Auteur</StyledThead>
-        <StyledThead>Intitulé livre</StyledThead>
-        <StyledThead>Statut</StyledThead>
-        <StyledThead>Editer</StyledThead>
-        <StyledThead>Supprimer</StyledThead>
-        <StyledThead>Emprunter</StyledThead>
+        <StyledThead>{i18n.t('author')}</StyledThead>
+        <StyledThead>{i18n.t('title')}</StyledThead>
+        <StyledThead>{i18n.t('status')}</StyledThead>
+        <StyledThead>{i18n.t('edited')}</StyledThead>
+        <StyledThead>{i18n.t('delete')}</StyledThead>
+        <StyledThead>{i18n.t('borrow')}</StyledThead>
         {bookListe.map(book =>
           book.id ? (
             <tr key={book.id}>
@@ -83,7 +84,7 @@ const BookContainer = styled.div``
 const StyledTable = styled.table`
   display: flex;
   padding: 20px;
-  width: 950px;
+  width: 1180px;
   margin: 0 auto;
   margin-top: 2%;
   border-radius: 8px;
@@ -92,6 +93,7 @@ const StyledTable = styled.table`
   box-sizing: border-box;
   display: block;
   color: #24292e;
+  font-weight: bold;
   line-height: 1.5px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
     sans-serif, Apple Color Emoji, Segoe UI Emoji;
