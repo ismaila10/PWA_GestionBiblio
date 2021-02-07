@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteBook } from '../../actions/book'
 import Logo from '../logo'
 import url from '../../assets/edit.jpg'
 import url1 from '../../assets/delete1.png'
+import url2 from '../../assets/pret2.png'
+import url3 from '../../assets/pret.png'
 import { IconButton } from '../texts'
 import book from '../../reducers/book'
 import Modal from '../popup'
+import { editBook } from '../../actions/book'
 
 const Books = () => {
   const bookListe = useSelector(state => state.book.list)
@@ -18,6 +21,14 @@ const Books = () => {
     author: book.author,
     statut: book.statut
   })
+  const handleClick = (e, book) => {
+    if(book.statut === 'Disponible' || book.statut === 'Dispo'){
+      dispatch(editBook({...book, id: book.id, name: book.name, author: book.author, statut: 'En pret' }))
+      alert("Merci de rendre le livre après lecture")
+    }else {
+      alert("Ce livre n'est pas disponible")
+    }
+  }
   const dispatch = useDispatch()
   const onSubmitEdit = (e, book) => {
     setBookEdit(book)
@@ -37,6 +48,7 @@ const Books = () => {
         <StyledThead>Statut</StyledThead>
         <StyledThead>Editer</StyledThead>
         <StyledThead>Supprimer</StyledThead>
+        <StyledThead>Emprunter</StyledThead>
         {bookListe.map(book =>
           book.id ? (
             <tr key={book.id}>
@@ -53,6 +65,11 @@ const Books = () => {
                   <Logo url={url1} top='10px' width='1.5rem'></Logo>
                 </IconButton>
               </td>
+              <td>
+                <IconButton onClick={e => handleClick(e, book)}>
+                  <Logo url={(book.statut === 'Disponible') ? url2 : url3} top='10px' width='2rem'></Logo>
+                </IconButton>
+              </td>
             </tr>
           ) : null
         )}
@@ -66,7 +83,7 @@ const BookContainer = styled.div``
 const StyledTable = styled.table`
   display: flex;
   padding: 20px;
-  width: 850px;
+  width: 950px;
   margin: 0 auto;
   margin-top: 2%;
   border-radius: 8px;
@@ -82,7 +99,8 @@ const StyledTable = styled.table`
 
 const StyledThead = styled.th`
   justify-content: center;
-  width: 25%;
+  padding-bottom: 2.5%;
+  width: 20%;
 `
 
 export default Books

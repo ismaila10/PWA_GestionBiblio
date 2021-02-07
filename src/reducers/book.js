@@ -1,8 +1,12 @@
 import { ADD_BOOK, DELETE_BOOK, EDIT_BOOK } from '../actions/book'
 
 const initialState = {
-  list: [{id: '1A', name: 'Une vie de boy', author: 'Ismaila Diallo', statut:'Dispo'},
-    {id: '1AA', name: 'Une si longue lettre', author: 'Dorian Gueguen', statut:'Dispo'}    
+  list: [{id: '1A', name: 'Une vie de boy', author: 'Ferdinand Oyono', statut:'Disponible'},
+    {id: '1AB', name: 'Une si longue lettre', author: 'Mariama Ba', statut:'Disponible'},
+    {id: '1AC', name: 'Les fables', author: 'Jean De La Fontaine', statut:'Disponible'},
+    {id: '1AD', name: 'Vol de nuit', author: 'Antoine De Saint Exupery', statut:'Disponible'},
+    {id: '1AE', name: 'Les fables', author: 'Jean De La Fontaine', statut:'Disponible'},
+    {id: '1AF', name: 'Les Contemplations', author: 'Victor Hugo', statut:'Disponible'}          
   ]
 }
 
