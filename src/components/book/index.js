@@ -18,7 +18,6 @@ const Books = () => {
     author: book.author,
     statut: book.statut
   })
-  console.log(bookListe)
   const dispatch = useDispatch()
   const onSubmitEdit = (e, book) => {
     setBookEdit(book)
@@ -67,9 +66,9 @@ const BookContainer = styled.div``
 const StyledTable = styled.table`
   display: flex;
   padding: 20px;
-  width: 740px;
+  width: 850px;
   margin: 0 auto;
-  margin-top: 5%;
+  margin-top: 2%;
   border-radius: 8px;
   background-color: #f6f8fa;
   border: 1px solid #eaecef;

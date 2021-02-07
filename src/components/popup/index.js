@@ -16,6 +16,8 @@ export const Modal = ({ showModal, setModal, bookEdit, setBookEdit }) => {
                     visible='true'
                     bookEdit={bookEdit}
                     setBookEdit={setBookEdit}
+                    showModal={showModal}
+                    setModal={setModal}
                   ></BookForm>
                   <CloseModalButton
                     aria-label='Close modal'

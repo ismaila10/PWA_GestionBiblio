@@ -42,7 +42,7 @@ const Header = () => {
         <UserName>Ismaila</UserName>
         {isToken ? (
           <Logout handleClick={onClick}></Logout>
-        ) : //Ne s'affiche qu'aprés refresh de la page (apres auth) malgrés le state comme je vous avais montré
+        ) :
         null}
       </div>
     </HeaderContainer>
