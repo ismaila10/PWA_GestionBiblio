@@ -12,9 +12,16 @@ import book from '../../reducers/book'
 import Modal from '../popup'
 import { editBook } from '../../actions/book'
 import i18n from "i18next";
+import { useHistory } from 'react-router-dom'
 
 const Books = () => {
   const bookListe = useSelector(state => state.book.list)
+  const history = useHistory()
+  /* Récupérer liste des user pour afficher les fonctions edit ou delete en fonction du role de l'user
+   itérer sur la liste et comparer avec l'user connecter si c'est un admin ou pas */
+  const userListe = useSelector(state => state.user.list)
+  useEffect(() => {
+  })
   const [showModal, setModal] = useState(false)
   const [bookEdit, setBookEdit] = useState({
     id: book.id,
@@ -25,7 +32,8 @@ const Books = () => {
   const handleClick = (e, book) => {
     if(book.statut === 'Disponible' || book.statut === 'Dispo'){
       dispatch(editBook({...book, id: book.id, name: book.name, author: book.author, statut: 'En pret' }))
-      alert("Merci de rendre le livre après lecture")
+      alert("Merci de rendre ce livre après lecture")
+      history.push('/home')
     }else {
       alert("Ce livre n'est pas disponible")
     }
@@ -50,30 +58,33 @@ const Books = () => {
         <StyledThead>{i18n.t('edited')}</StyledThead>
         <StyledThead>{i18n.t('delete')}</StyledThead>
         <StyledThead>{i18n.t('borrow')}</StyledThead>
-        {bookListe.map(book =>
-          book.id ? (
-            <tr key={book.id}>
-              <td>{book.author}</td>
-              <td>{book.name}</td>
-              <td>{book.statut}</td>
-              <td>
-                <IconButton onClick={e => onSubmitEdit(e, book)}>
-                  <Logo url={url} top='10px' width='1.5rem'></Logo>
-                </IconButton>
-              </td>
-              <td>
-                <IconButton onClick={() => dispatch(deleteBook(book.id))}>
-                  <Logo url={url1} top='10px' width='1.5rem'></Logo>
-                </IconButton>
-              </td>
-              <td>
-                <IconButton onClick={e => handleClick(e, book)}>
-                  <Logo url={(book.statut === 'Disponible') ? url2 : url3} top='10px' width='2rem'></Logo>
-                </IconButton>
-              </td>
-            </tr>
-          ) : null
-        )}
+
+        {
+          bookListe.map(book =>
+            book.id ? (
+              <tr key={book.id}>
+                <td>{book.author}</td>
+                <td>{book.name}</td>
+                <td>{book.statut}</td>
+                <td>
+                  <IconButton onClick={e => onSubmitEdit(e, book)}>
+                    <Logo url={url} top='10px' width='1.5rem'></Logo>
+                  </IconButton>
+                </td>
+                <td>
+                  <IconButton onClick={() => dispatch(deleteBook(book.id))}>
+                    <Logo url={url1} top='10px' width='1.5rem'></Logo>
+                  </IconButton>
+                </td>
+                <td>
+                  <IconButton onClick={e => handleClick(e, book)}>
+                    <Logo url={(book.statut === 'Disponible') ? url2 : url3} top='10px' width='2rem'></Logo>
+                  </IconButton>
+                </td>
+              </tr>
+            ) : null
+          )
+        }
       </StyledTable>
     </BookContainer>
   )
