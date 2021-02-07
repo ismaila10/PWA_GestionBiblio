@@ -23,6 +23,7 @@ export const Linked = styled.button`
   &:hover {
     color: green;
   }
+  
 `
 
 export const IconButton = styled.button`
