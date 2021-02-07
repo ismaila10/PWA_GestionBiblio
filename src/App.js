@@ -40,7 +40,6 @@ function App() {
             alt='Theme'
             url={theme.mode === 'dark' ? url1 : url}
           >
-            Zoom
           </Logo>
         </ChangeTheme>
         <Routes></Routes>
@@ -50,12 +49,12 @@ function App() {
 }
 
 const getBackground = style('mode', {
-  light: '#EEE',
+  light: '#808080',
   dark: '#111'
 })
 
 const getForeGround = style('mode', {
-  light: '#111',
+  light: '#808080',
   dark: '#EEE'
 })
 

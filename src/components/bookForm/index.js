@@ -53,7 +53,9 @@ const BookForm = ({ bookEdit, setBookEdit }) => {
             placeholder='Nom du livre'
           ></StyledInput>
         </div>
-        <ButtonSubmit name='Valider' width='175px' left='15%'></ButtonSubmit>
+        <SubmitDiv>
+          <ButtonSubmit name='Valider' width='100%' height='40px'></ButtonSubmit>
+        </SubmitDiv>
       </StyledForm>
     </BookFormContainer>
   )
@@ -86,12 +88,19 @@ const StyledForm = styled.form`
 `
 
 const StyledInput = styled.input`
+  display: flex;
   padding: 5px;
   width: 70%;
   height: 1.5rem;
   margin-top: 25px;
   margin-bottom: 10px;
   border-radius: 3px;
+`
+
+const SubmitDiv = styled.div`
+  display: flex;
+  padding: 5px;
+  width: 70%;
 `
 
 export default BookForm

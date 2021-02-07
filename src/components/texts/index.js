@@ -20,6 +20,9 @@ export const Linked = styled.button`
   margin-right: 1rem;
   margin-left: 1rem;
   font-size: 1.5rem;
+  &:hover {
+    color: green;
+  }
 `
 
 export const IconButton = styled.button`

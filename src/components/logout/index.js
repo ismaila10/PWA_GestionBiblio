@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import Logo from '../logo'
+import url from "../../assets/logout1.jpg";
 
 const Logout = ({ handleClick }) => {
-  return <LogoutButton onClick={handleClick}>Logout</LogoutButton>
+  return <LogoutButton onClick={handleClick}><Logo url={url} width="25px"></Logo></LogoutButton>
 }
 
 const LogoutButton = styled.button`
   display: flex;
-  font-size: 1em;
-  margin-right: 1em;
+  cursor: pointer;
   margin-top: 4%;
-  padding: 0.25em 1em;
   border: none;
   border-radius: 3px;
   color: red;
