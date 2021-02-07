@@ -3,10 +3,11 @@ import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import ButtonSubmit from '../button'
 import { uuid } from 'uuidv4'
-
+import url3 from '../../assets/pret.png'
 import { addBook, editBook } from '../../actions/book'
-import { Title } from '../texts'
+import { IconButton, Title } from '../texts'
 import i18n from "i18next";
+import Logo from '../logo'
 
 const BookForm = ({ bookEdit, setBookEdit, showModal, setModal }) => {
   const [newBook, setNewBook] = useState({
@@ -35,7 +36,6 @@ const BookForm = ({ bookEdit, setBookEdit, showModal, setModal }) => {
       ) : (
         <Title>{i18n.t('add')}</Title>
       )}
-
       <StyledForm onSubmit={onSubmit}>
         <div>
           <StyledInput

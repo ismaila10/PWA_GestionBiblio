@@ -6,6 +6,7 @@ import Logo from '../logo'
 import url from '../../assets/edit.jpg'
 import url1 from '../../assets/delete1.png'
 import url2 from '../../assets/pret2.png'
+import url3 from '../../assets/pret.png'
 import { IconButton } from '../texts'
 import book from '../../reducers/book'
 import Modal from '../popup'
@@ -21,8 +22,9 @@ const Books = () => {
     statut: book.statut
   })
   const handleClick = (e, book) => {
-    if(book.statut === 'Disponible'){
+    if(book.statut === 'Disponible' || book.statut === 'Dispo'){
       dispatch(editBook({...book, id: book.id, name: book.name, author: book.author, statut: 'En pret' }))
+      alert("Merci de rendre le livre après lecture")
     }else {
       alert("Ce livre n'est pas disponible")
     }
@@ -46,7 +48,7 @@ const Books = () => {
         <StyledThead>Statut</StyledThead>
         <StyledThead>Editer</StyledThead>
         <StyledThead>Supprimer</StyledThead>
-        <StyledThead>Emprunter/Rendre</StyledThead>
+        <StyledThead>Emprunter</StyledThead>
         {bookListe.map(book =>
           book.id ? (
             <tr key={book.id}>
@@ -64,8 +66,8 @@ const Books = () => {
                 </IconButton>
               </td>
               <td>
-                <IconButton  onClick={e => handleClick(e, book)}>
-                  <Logo url={url2} top='10px' width='2rem'></Logo>
+                <IconButton onClick={e => handleClick(e, book)}>
+                  <Logo url={(book.statut === 'Disponible') ? url2 : url3} top='10px' width='2rem'></Logo>
                 </IconButton>
               </td>
             </tr>
