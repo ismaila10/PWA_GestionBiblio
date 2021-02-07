@@ -49,7 +49,6 @@ export const Modal = ({ showModal, setModal, bookEdit, setBookEdit }) => {
                 <ModalContent>
                   <div showModal={showModal}>
                     <BookForm
-                      visible='true'
                       bookEdit={bookEdit}
                       setBookEdit={setBookEdit}
                       showModal={showModal}

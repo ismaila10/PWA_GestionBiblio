@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useHistory } from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import ButtonSubmit from '../button'
@@ -13,7 +13,7 @@ const BookForm = ({ bookEdit, setBookEdit, showModal, setModal }) => {
     author: bookEdit ? bookEdit.author : '',
     statut: 'Disponible'
   })
-
+ 
   const dispatch = useDispatch()
 
   const onSubmit = e => {
@@ -23,8 +23,11 @@ const BookForm = ({ bookEdit, setBookEdit, showModal, setModal }) => {
     }
     else if (!bookEdit) {
       dispatch(addBook({ id: uuid(), name: newBook.name, author: newBook.author, statut: newBook.statut }))
+      alert('Livre ajouté avec succés')
     } else {
       dispatch(editBook({ id: bookEdit.id, name: newBook.name, author: newBook.author, statut: newBook.statut }))
+      alert('Données modifiées avec succés')
+      setModal(false)
     }
 
     setNewBook({ name: '', author: '' })

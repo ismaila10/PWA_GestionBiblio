@@ -33,7 +33,7 @@ const Books = () => {
     if(book.statut === 'Disponible' || book.statut === 'Dispo'){
       dispatch(editBook({...book, id: book.id, name: book.name, author: book.author, statut: 'En pret' }))
       alert("Merci de rendre ce livre après lecture")
-      history.push('/home')
+      history.push('/book')
     }else {
       alert("Ce livre n'est pas disponible")
     }
