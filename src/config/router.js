@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import {
   Route,
@@ -16,7 +17,10 @@ import PrivateRoute from '../utils/privateRoute'
 const Routes = () => {
   return (
     <Router>
-      <Header></Header>
+      <BlocHead>
+        <Header></Header>
+      </BlocHead>
+      
 
       <Switch>
         <Route exact path='/' component={Login}></Route>
@@ -27,5 +31,22 @@ const Routes = () => {
     </Router>
   )
 }
+
+const BlocHead = styled.div`
+  animation-duration: 4s;
+  animation-name: glissement;
+  animation-iteration-count: 1;
+  @keyframes glissement {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+`
 
 export default Routes
