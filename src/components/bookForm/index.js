@@ -4,8 +4,9 @@ import { useDispatch } from 'react-redux'
 import ButtonSubmit from '../button'
 import { uuid } from 'uuidv4'
 import { addBook, editBook } from '../../actions/book'
-import { Title } from '../texts'
+import { IconButton, Title, ButtonClick } from '../texts'
 import i18n from "i18next";
+import Logo from '../logo'
 
 const BookForm = ({ bookEdit, setBookEdit, showModal, setModal }) => {
   const [newBook, setNewBook] = useState({
@@ -15,6 +16,11 @@ const BookForm = ({ bookEdit, setBookEdit, showModal, setModal }) => {
   })
  
   const dispatch = useDispatch()
+  const handleClick = () => {
+    dispatch(editBook({ id: bookEdit.id, name: newBook.name, author: newBook.author, statut: newBook.statut }))
+      alert('Livre rendu, MERCI!')
+      setModal(false)
+  }
 
   const onSubmit = e => {
     e.preventDefault()
@@ -36,7 +42,10 @@ const BookForm = ({ bookEdit, setBookEdit, showModal, setModal }) => {
   return (
     <BookFormContainer>
       {bookEdit ? (
-        <Title>{i18n.t('edit')}</Title>
+        <IfDiv>
+          <Title>{i18n.t('edit')}</Title>
+          <ButtonClick disabled={(bookEdit.statut === 'Disponible') ? true : false} onClick={handleClick}>Rendre</ButtonClick>
+        </IfDiv>
       ) : (
         <Title>{i18n.t('add')}</Title>
       )}
@@ -105,6 +114,10 @@ const SubmitDiv = styled.div`
   display: flex;
   padding: 5px;
   width: 70%;
+`
+
+const IfDiv = styled.div`
+  align-item: center;
 `
 
 export default BookForm

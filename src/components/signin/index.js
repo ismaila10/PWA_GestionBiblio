@@ -54,7 +54,7 @@ animation-duration: 4s;
     }
   
     to {
-      margin-left: 30%;
+      margin-left: 25%;
       width: 50%;
     }
   }

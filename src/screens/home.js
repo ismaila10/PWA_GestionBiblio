@@ -28,7 +28,6 @@ const HomeContainer = styled.div`
 
 const ImageDiv = styled.div`
 animation-duration: 4s;
-
 animation-name: glissement;
 animation-direction: normal;
 animation-iteration-count: infinite;

@@ -101,7 +101,7 @@ const CustomTable = styled.table`
   @keyframes glissement {
     from {
       margin-left: 100%;
-      width: 300%;
+      width: 100%;
     }
   
     to {

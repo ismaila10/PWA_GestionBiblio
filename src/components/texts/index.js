@@ -27,6 +27,22 @@ export const Linked = styled.button`
   
 `
 
+export const ButtonClick = styled.button`
+cursor: pointer;
+margin-left: 45%;
+width: 90px;
+height: 35px;
+align-item: center;
+border-radius: 18px
+border: 1px solid green;
+color: green;
+background-color: transparent;
+&:hover {
+  color: white;
+  background-color: green;
+}
+`
+
 export const IconButton = styled.button`
   cursor: pointer;
   border: none;
