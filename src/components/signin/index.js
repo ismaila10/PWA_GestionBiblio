@@ -44,12 +44,26 @@ const SignIn = ({ submit }) => {
 }
 
 const FormContainer = styled.div`
+animation-duration: 4s;
+  animation-name: glissement;
+  animation-iteration-count: 1;
+  @keyframes glissement {
+    from {
+      margin-left: 100%;
+      width: 50%;
+    }
+  
+    to {
+      margin-left: 30%;
+      width: 50%;
+    }
+  }
   display: flex;
   padding: 20px;
   font-size: 14px;
-  width: 540px;
+  width: 50%;
   margin: 0 auto;
-  margin-top: 0%;
+  margin-top: 5%;
   border-radius: 8px;
   background-color: #f6f8fa;
   border: 1px solid #eaecef;

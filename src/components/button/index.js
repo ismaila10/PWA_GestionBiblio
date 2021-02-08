@@ -16,6 +16,7 @@ const ButtonSubmit = props => {
 
 const SubmitButton = styled.button`
   font-family: inherit;
+  cursor: pointer;
   margin: 9px 0px;
   margin-left: ${props => (props.left ? props.left : '0%')};
   height: ${props => (props.height ? props.height : '30px')};

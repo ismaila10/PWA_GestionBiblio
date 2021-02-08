@@ -95,13 +95,27 @@ const Books = () => {
 const BookContainer = styled.div``
 
 const CustomTable = styled.table`
+  animation-duration: 4s;
+  animation-name: glissement;
+  animation-iteration-count: 1;
+  @keyframes glissement {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
   box-sizing: border-box;
   color: #24292e;
   font-weight: bold;
   line-height: 1.5px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
     sans-serif, Apple Color Emoji, Segoe UI Emoji;
-  width: 1180px;
+  width: 100%;
   margin: 0 auto;
   border-radius: 8px;
   background-color: #f6f8fa;
