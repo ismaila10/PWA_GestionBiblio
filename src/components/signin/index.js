@@ -50,12 +50,12 @@ animation-direction: normal;
 animation-iteration-count: 1;
 @keyframes glissement {
   from {
-    margin-left: 100%;
+    margin-right: 50%;
     width: 50%;
   }
 
   to {
-    margin-left: 25%;
+    margin-right: 25%;
     width: 50%;
   }
 }
