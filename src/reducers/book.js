@@ -5,7 +5,6 @@ const initialState = {
     {id: '1AB', name: 'Une si longue lettre', author: 'Mariama Ba', statut:'Disponible'},
     {id: '1AC', name: 'Les fables', author: 'Jean De La Fontaine', statut:'Disponible'},
     {id: '1AD', name: 'Vol de nuit', author: 'Antoine De Saint Exupery', statut:'Disponible'},
-    {id: '1AE', name: 'Les fables', author: 'Jean De La Fontaine', statut:'Disponible'},
     {id: '1AF', name: 'Les Contemplations', author: 'Victor Hugo', statut:'Disponible'}          
   ]
 }

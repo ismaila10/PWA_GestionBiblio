@@ -51,13 +51,15 @@ const Books = () => {
         setBookEdit={setBookEdit}
         setModal={setModal}
       ></Modal>
-      <StyledTable>
-        <StyledThead>{i18n.t('author')}</StyledThead>
-        <StyledThead>{i18n.t('title')}</StyledThead>
-        <StyledThead>{i18n.t('status')}</StyledThead>
-        <StyledThead>{i18n.t('edited')}</StyledThead>
-        <StyledThead>{i18n.t('delete')}</StyledThead>
-        <StyledThead>{i18n.t('borrow')}</StyledThead>
+      <CustomTable>
+        <tr>
+        <th>{i18n.t('author')}</th>
+        <th>{i18n.t('title')}</th>
+        <th>{i18n.t('status')}</th>
+        <th>{i18n.t('edited')}</th>
+        <th>{i18n.t('delete')}</th>
+        <th>{i18n.t('borrow')}</th>
+        </tr>
 
         {
           bookListe.map(book =>
@@ -85,35 +87,40 @@ const Books = () => {
             ) : null
           )
         }
-      </StyledTable>
+      </CustomTable>
     </BookContainer>
   )
 }
 
 const BookContainer = styled.div``
 
-const StyledTable = styled.table`
-  display: flex;
-  padding: 20px;
-  width: 1180px;
-  margin: 0 auto;
-  margin-top: 2%;
-  border-radius: 8px;
-  background-color: #f6f8fa;
-  border: 1px solid #eaecef;
+const CustomTable = styled.table`
   box-sizing: border-box;
-  display: block;
   color: #24292e;
   font-weight: bold;
   line-height: 1.5px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
     sans-serif, Apple Color Emoji, Segoe UI Emoji;
-`
-
-const StyledThead = styled.th`
+  width: 1180px;
+  margin: 0 auto;
+  border-radius: 8px;
+  background-color: #f6f8fa;
+  border-collapse: collapse;
   justify-content: center;
-  padding-bottom: 2.5%;
-  width: 20%;
+  th,
+  td {
+    border: 1px solid silver;
+    text-align: center
+  }
+  th, 
+  td, 
+  tr {
+    padding: 5px;
+  }
+  th {
+    padding-bottom: 2.5%;
+    padding-top: 2.5%;
+  }
 `
 
 export default Books
