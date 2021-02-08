@@ -61,12 +61,12 @@ function App() {
 }
 
 const getBackground = style('mode', {
-  light: '#808080',
+  light: '#2F4F4F',
   dark: '#111'
 })
 
 const getForeGround = style('mode', {
-  light: '#808080',
+  light: '#2F4F4F',
   dark: '#EEE'
 })
 

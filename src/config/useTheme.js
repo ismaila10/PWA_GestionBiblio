@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import storage from 'local-storage-fallback'
 
 export default function useTheme(
-  defaultTheme = { mode: 'dark', textZoom: 'normal' }
+  defaultTheme = { mode: 'light', textZoom: 'normal' }
 ) {
   const [theme, _setTheme] = useState(getInitialTheme)
 
