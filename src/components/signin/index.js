@@ -45,19 +45,20 @@ const SignIn = ({ submit }) => {
 
 const FormContainer = styled.div`
 animation-duration: 4s;
-  animation-name: glissement;
-  animation-iteration-count: 1;
-  @keyframes glissement {
-    from {
-      margin-left: 100%;
-      width: 50%;
-    }
-  
-    to {
-      margin-left: 25%;
-      width: 50%;
-    }
+animation-name: glissement;
+animation-direction: normal;
+animation-iteration-count: 1;
+@keyframes glissement {
+  from {
+    margin-left: 100%;
+    width: 50%;
   }
+
+  to {
+    margin-left: 25%;
+    width: 50%;
+  }
+}
   display: flex;
   padding: 20px;
   font-size: 14px;
