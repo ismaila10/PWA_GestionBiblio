@@ -16,7 +16,7 @@ Une interface de connexion , un menu avec la page home, et books
       de le rendre s'il est en prêt
 
 
-Lien vers le site: https://powerful-thicket-17491.herokuapp.com/book
+Lien vers le site: https://powerful-thicket-17491.herokuapp.com
 
 
 Ismaila Diallo
