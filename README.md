@@ -19,6 +19,3 @@ Une interface de connexion , un menu avec la page home, et books
 Lien vers le site: https://powerful-thicket-17491.herokuapp.com
 
 
-Ismaila Diallo
-
-                                    MERCI pour les vidéos, un plaisir de vous avoir eu comme professeur
