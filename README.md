@@ -12,7 +12,7 @@ Une interface de connexion , un menu avec la page home, et books
       d'ajouter, 
       de supprimer, 
       de modifier ou même 
-      d'effectuer un prêt du livre si ce dernier est disponible ou 
+      d'effectuer un prêt si le livre est disponible ou 
       de le rendre s'il est en prêt
 
 
