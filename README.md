@@ -1,4 +1,6 @@
-# PWA_GestionBiblio
+# PWA Gestion Bibliothèque en ligne
+
+# Développer avec React version 17.0.1 en utilisant les Hooks
 Partage d'une bibliothèque en ligne
   Administrator interface
 Une interface de connexion , un menu avec la page home, et books
